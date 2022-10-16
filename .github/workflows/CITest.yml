@@ -13,8 +13,9 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2
         - name: Cypress tests
-          uses: ./
+          uses: cypress-io/github-action@v4
           with:
             build: npx cypress info
             working-directory: examples/v10/chrome
             specs: cypress/Integration/examples/**.cy.js
+            browser: chrome
