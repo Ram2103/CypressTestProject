@@ -1,0 +1,20 @@
+name: My Cypress test
+on:
+  push:
+    branches:
+      -'main'
+
+  workflow_dispatch:
+
+jobs:
+  tests-v10:
+    runs-on: ubuntu-20.04
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Cypress tests
+          uses: ./
+          with:
+            build: npx cypress info
+            working-directory: examples/v10/chrome
+            specs: cypress/Integration/examples/**.cy.js
