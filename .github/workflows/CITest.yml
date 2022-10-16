@@ -2,7 +2,7 @@ name: My Cypress test
 on:
   push:
     branches:
-      -'main'
+      - main
 
   workflow_dispatch:
 
